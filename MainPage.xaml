@@ -3,34 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ReatMusic.MainPage"
              BackgroundColor="#1E1E1E">
-
-    <!--<ContentPage.Resources>
-        <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="#3D3D3D" />
-            <Setter Property="TextColor" Value="White" />
-            <Setter Property="VisualStateManager.VisualStateGroups">
-                <VisualStateGroupList>
-                    <VisualStateGroup>
-                        <VisualState x:Name="Normal">
-                            <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="#3D3D3D" />
-                            </VisualState.Setters>
-                        </VisualState>
-                        <VisualState x:Name="Pressed">
-                            <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="Green" />
-                                <Setter Property="Shadow" Value="{StaticResource ButtonPressedShadow}" />
-                            </VisualState.Setters>
-                        </VisualState>
-                    </VisualStateGroup>
-                </VisualStateGroupList>
-            </Setter>
-        </Style>
-
-        --><!--<Shadow x:Key="ButtonPressedShadow" Color="Green" Radius="10" Opacity="0.5" />--><!--
-    </ContentPage.Resources>-->
-
-
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -43,13 +16,13 @@
         </Grid.ColumnDefinitions>
 
         <!-- Header -->
-        <Grid Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#2f2f2f" Padding="10">
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#2f2f2f" Padding="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <Label Text="Reat " FontSize="24" TextColor="White" />
+                <Label Text="Reat " FontSize="24" TextColor="White" FontFamily=""/>
                 <Image Source="reat_logo.png" HeightRequest="30" />
                 <Label Text="Music" FontSize="24" TextColor="White"/>
             </StackLayout>
@@ -69,9 +42,12 @@
             <CollectionView x:Name="PlaylistsCollection">
                 <CollectionView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
-                        <x:String>Playlist 1 class Playlist</x:String>
+                        <x:String>Playlist 1</x:String>
                         <x:String>Playlist 2</x:String>
-                        <x:String>Playlist 3</x:String>
+                        <x:String>Playlist 4</x:String>
+                        <x:String>Playlist 5</x:String>
+                        <x:String>Playlist 6</x:String>
+                        <x:String>Playlist 7</x:String>
                     </x:Array>
                 </CollectionView.ItemsSource>
                 <CollectionView.ItemTemplate>
@@ -87,60 +63,253 @@
         <ScrollView Grid.Row="1" Grid.Column="1">
             <StackLayout Padding="20">
                 <Label Text="Your favourite" FontSize="24" FontAttributes="Bold" TextColor="White" Margin="0,0,0,10"/>
-                <CollectionView ItemsLayout="HorizontalList">
-                    <CollectionView.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Song 1</x:String>
-                            <x:String>Song 2</x:String>
-                            <x:String>Song 3</x:String>
-                            <x:String>Song 4</x:String>
-                            <x:String>Song 5</x:String>
-                            <x:String>Song 6</x:String>
-                        </x:Array>
-                    </CollectionView.ItemsSource>
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Frame BorderColor="#3D3D3D" BackgroundColor="#2C2C2C" CornerRadius="10" Padding="10" Margin="0,0,10,0">
+                <ScrollView Orientation="Horizontal" Margin="0,0,0,10">
+                    <StackLayout Orientation="Horizontal" Spacing="20">
+                        <!-- Song 1 -->
+                        <StackLayout>
+                            <Frame BackgroundColor="#2f2f2f" CornerRadius="10" Padding="10" Margin="0,0,10,0">
                                 <StackLayout>
                                     <Frame HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True" CornerRadius="5">
                                         <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
                                     </Frame>
-                                    <Label Text="{Binding .}" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Song 1" TextColor="White" FontAttributes="Bold"/>
                                     <Label Text="Artist" TextColor="LightGray" FontSize="Small"/>
                                 </StackLayout>
                             </Frame>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                        </StackLayout>
 
-                <Label Text="Artists" FontSize="24" FontAttributes="Bold" TextColor="White" Margin="0,20,0,10"/>
-                <CollectionView ItemsLayout="HorizontalList">
-                    <CollectionView.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Artist 1</x:String>
-                            <x:String>Artist 2</x:String>
-                            <x:String>Artist 3</x:String>
-                            <x:String>Artist 4</x:String>
-                            <x:String>Artist 5</x:String>
-                            <x:String>Artist 6</x:String>
-                        </x:Array>
-                    </CollectionView.ItemsSource>
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout Margin="0,0,20,0">
-                                <Frame BorderColor="#3D3D3D" BackgroundColor="#2C2C2C" CornerRadius="50" HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True">
-                                    <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
-                                </Frame>
-                                <Label Text="{Binding .}" TextColor="White" HorizontalOptions="Center" Margin="0,5,0,0"/>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                        <!-- Song 2 -->
+                        <StackLayout>
+                            <Frame BackgroundColor="#2f2f2f" CornerRadius="10" Padding="10" Margin="0,0,10,0">
+                                <StackLayout>
+                                    <Frame HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True" CornerRadius="5">
+                                        <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Label Text="Song 2" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Artist" TextColor="LightGray" FontSize="Small"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <!-- Додаткові пісні можна додати аналогічно -->
+                        <StackLayout>
+                            <Frame BackgroundColor="#2f2f2f" CornerRadius="10" Padding="10" Margin="0,0,10,0">
+                                <StackLayout>
+                                    <Frame HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True" CornerRadius="5">
+                                        <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Label Text="Song 3" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Artist" TextColor="LightGray" FontSize="Small"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2f2f2f" CornerRadius="10" Padding="10" Margin="0,0,10,0">
+                                <StackLayout>
+                                    <Frame HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True" CornerRadius="5">
+                                        <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Label Text="Song 3" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Artist" TextColor="LightGray" FontSize="Small"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2f2f2f" CornerRadius="10" Padding="10" Margin="0,0,10,0">
+                                <StackLayout>
+                                    <Frame HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True" CornerRadius="5">
+                                        <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Label Text="Song 3" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Artist" TextColor="LightGray" FontSize="Small"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2f2f2f" CornerRadius="10" Padding="10" Margin="0,0,10,0">
+                                <StackLayout>
+                                    <Frame HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True" CornerRadius="5">
+                                        <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Label Text="Song 3" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Artist" TextColor="LightGray" FontSize="Small"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2f2f2f" CornerRadius="10" Padding="10" Margin="0,0,10,0">
+                                <StackLayout>
+                                    <Frame HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True" CornerRadius="5">
+                                        <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Label Text="Song 3" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Artist" TextColor="LightGray" FontSize="Small"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2f2f2f" CornerRadius="10" Padding="10" Margin="0,0,10,0">
+                                <StackLayout>
+                                    <Frame HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True" CornerRadius="5">
+                                        <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Label Text="Song 3" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Artist" TextColor="LightGray" FontSize="Small"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2f2f2f" CornerRadius="10" Padding="10" Margin="0,0,10,0">
+                                <StackLayout>
+                                    <Frame HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True" CornerRadius="5">
+                                        <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Label Text="Song 3" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Artist" TextColor="LightGray" FontSize="Small"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2f2f2f" CornerRadius="10" Padding="10" Margin="0,0,10,0">
+                                <StackLayout>
+                                    <Frame HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True" CornerRadius="5">
+                                        <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Label Text="Song 3" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Artist" TextColor="LightGray" FontSize="Small"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2f2f2f" CornerRadius="10" Padding="10" Margin="0,0,10,0">
+                                <StackLayout>
+                                    <Frame HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True" CornerRadius="5">
+                                        <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Label Text="Song 3" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Artist" TextColor="LightGray" FontSize="Small"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2f2f2f" CornerRadius="10" Padding="10" Margin="0,0,10,0">
+                                <StackLayout>
+                                    <Frame HeightRequest="100" WidthRequest="100" Padding="0" IsClippedToBounds="True" CornerRadius="5">
+                                        <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <Label Text="Song 3" TextColor="White" FontAttributes="Bold"/>
+                                    <Label Text="Artist" TextColor="LightGray" FontSize="Small"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+                    </StackLayout>
+                </ScrollView>
+
+                <Label Text="Artists" FontSize="24" FontAttributes="Bold" TextColor="White" Margin="0,30,0,10"/>
+                <ScrollView Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" Spacing="20">
+                        <!-- Окремий елемент для Artist 1 -->
+                        <StackLayout>
+                            <Frame BackgroundColor="#2C2C2C" CornerRadius="0" HeightRequest="100" WidthRequest="100">
+                                <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                            </Frame>
+                            <Button Text="Artist 1" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent" 
+                            BorderWidth="0" Command="{Binding SomeCommand}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                        </StackLayout>
+
+                        <!-- Окремий елемент для Artist 2 -->
+                        <StackLayout>
+                            <Frame BackgroundColor="#2C2C2C" CornerRadius="0" HeightRequest="100" WidthRequest="100">
+                                <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                            </Frame>
+                            <Button Text="Artist 2" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent" 
+                            BorderWidth="0" Command="{Binding SomeCommand}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                        </StackLayout>
+
+                        <!-- Додаткові елементи для інших артистів аналогічно -->
+                        <StackLayout>
+                            <Frame BackgroundColor="#2C2C2C" CornerRadius="0" HeightRequest="100" WidthRequest="100">
+                                <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                            </Frame>
+                            <Button Text="Artist 3" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent" 
+                            BorderWidth="0" Command="{Binding SomeCommand}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2C2C2C" CornerRadius="0" HeightRequest="100" WidthRequest="100">
+                                <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                            </Frame>
+                            <Button Text="Artist 3" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent" 
+    BorderWidth="0" Command="{Binding SomeCommand}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2C2C2C" CornerRadius="0" HeightRequest="100" WidthRequest="100">
+                                <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                            </Frame>
+                            <Button Text="Artist 3" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent" 
+    BorderWidth="0" Command="{Binding SomeCommand}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2C2C2C" CornerRadius="0" HeightRequest="100" WidthRequest="100">
+                                <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                            </Frame>
+                            <Button Text="Artist 3" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent" 
+    BorderWidth="0" Command="{Binding SomeCommand}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2C2C2C" CornerRadius="0" HeightRequest="100" WidthRequest="100">
+                                <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                            </Frame>
+                            <Button Text="Artist 3" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent" 
+    BorderWidth="0" Command="{Binding SomeCommand}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2C2C2C" CornerRadius="0" HeightRequest="100" WidthRequest="100">
+                                <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                            </Frame>
+                            <Button Text="Artist 3" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent" 
+    BorderWidth="0" Command="{Binding SomeCommand}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2C2C2C" CornerRadius="0" HeightRequest="100" WidthRequest="100">
+                                <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                            </Frame>
+                            <Button Text="Artist 3" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent" 
+    BorderWidth="0" Command="{Binding SomeCommand}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                        </StackLayout>
+
+                        <StackLayout>
+                            <Frame BackgroundColor="#2C2C2C" CornerRadius="0" HeightRequest="100" WidthRequest="100">
+                                <Image Source="https://via.placeholder.com/100" Aspect="AspectFill"/>
+                            </Frame>
+                            <Button Text="Artist 3" TextColor="White" BackgroundColor="Transparent" BorderColor="Transparent" 
+    BorderWidth="0" Command="{Binding SomeCommand}" HorizontalOptions="Center" Margin="0,10,0,0"/>
+                        </StackLayout>
+
+                        <!-- Додати більше елементів для інших артистів за потреби -->
+                    </StackLayout>
+                </ScrollView>
             </StackLayout>
         </ScrollView>
 
+
         <!-- Footer / Player Controls -->
-        <Grid Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="#2f2f2f" Padding="10">
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="#2f2f2f" Padding="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -168,9 +337,9 @@
                 </Grid.ColumnDefinitions>
 
                 <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="Center">
-                    <Button Text="⏪" FontSize="15" CornerRadius="25" WidthRequest="50" HeightRequest="50" BackgroundColor="#3D3D3D" TextColor="White"/>
+                    <Button Text="Prev" FontSize="15" CornerRadius="25" WidthRequest="50" HeightRequest="50" BackgroundColor="#3D3D3D" TextColor="White"/>
                     <Button Text="▶" FontSize="24" CornerRadius="25" WidthRequest="50" HeightRequest="50" BackgroundColor="#3D3D3D" TextColor="White"/>
-                    <Button Text="⏩" FontSize="15" CornerRadius="25" WidthRequest="50" HeightRequest="50" BackgroundColor="#3D3D3D" TextColor="White"/>
+                    <Button Text="Next" FontSize="15" CornerRadius="25" WidthRequest="50" HeightRequest="50" BackgroundColor="#3D3D3D" TextColor="White"/>
                 </StackLayout>
 
                 <StackLayout Grid.Column="2" Orientation="Horizontal" HorizontalOptions="End">
